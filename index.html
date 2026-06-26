@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celinho Tintas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--azul:#0D47A1;
+--laranja:#FF7A00;
+--fundo:#f4f7fb;
+--card:#ffffff;
+--texto:#1e293b;
+--muted:#64748b;
+}
+
+body.dark{
+--fundo:#0f172a;
+--card:#1e293b;
+--texto:#f1f5f9;
+--muted:#94a3b8;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:var(--fundo);
+color:var(--texto);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:25px;
+transition:.3s;
+}
+
+.container{
+width:100%;
+max-width:900px;
+background:var(--card);
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+/* HEADER COM LOGO */
+.topo{
+position:relative;
+background:var(--azul);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+.topo img{
+width:100%;
+max-width:320px;
+height:auto;
+object-fit:contain;
+filter:drop-shadow(0 10px 20px rgba(0,0,0,.25));
+}
+
+.toggle{
+position:absolute;
+top:15px;
+right:15px;
+background:var(--laranja);
+border:none;
+color:white;
+padding:10px 14px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+font-size:13px;
+z-index:2;
+}
+
+/* CONTEÚDO */
+.conteudo{
+padding:30px;
+background:var(--fundo);
+transition:.3s;
+}
+
+.titulo{
+text-align:center;
+font-size:24px;
+font-weight:700;
+margin-bottom:25px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.unidade{
+background:var(--card);
+padding:20px;
+border-radius:18px;
+border-top:5px solid var(--laranja);
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.unidade:hover{
+transform:translateY(-5px);
+}
+
+.unidade h2{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.info{
+color:var(--muted);
+line-height:1.6;
+font-size:14px;
+margin:10px 0;
+}
+
+.botoes{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.btn{
+flex:1;
+padding:10px;
+text-align:center;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+font-size:13px;
+transition:.3s;
+}
+
+.whatsapp{background:#25D366;color:white;}
+.ligar{background:var(--laranja);color:white;}
+.maps{background:var(--azul);color:white;}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* RODAPÉ NOVO */
+.rodape{
+text-align:center;
+padding:18px;
+font-size:13px;
+color:var(--muted);
+background:var(--card);
+border-top:1px solid rgba(0,0,0,.05);
+}
+
+.rodape a{
+color:var(--laranja);
+text-decoration:none;
+font-weight:600;
+}
+
+/* RESPONSIVO */
+@media(max-width:600px){
+
+.topo{
+padding:25px 15px;
+}
+
+.topo img{
+max-width:240px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="topo">
+
+<button class="toggle" onclick="tema()">🌙 Tema</button>
+
+<img src="logo.png" alt="Celinho Tintas">
+
+</div>
+
+<div class="conteudo">
+
+<div class="titulo">Nossas Unidades</div>
+
+<div class="cards">
+
+<!-- IGUABA -->
+<div class="unidade">
+
+<h2>📍 Iguaba Grande</h2>
+
+<div class="info">
+Rod. Amaral Peixoto, 13-67<br>
+Laguna Azul - Iguaba Grande/RJ<br>
+CEP 28960-000<br><br>
+Em frente à Praia do Popeye
+</div>
+
+<div class="info">📞 (22) 99879-98998</div>
+
+<div class="botoes">
+
+<a class="btn whatsapp" href="https://wa.me/55229987998998">WhatsApp</a>
+<a class="btn ligar" href="tel:+55229987998998">Ligar</a>
+<a class="btn maps" href="https://maps.google.com/?q=Iguaba+Grande+Celinho+Tintas">Mapa</a>
+
+</div>
+
+</div>
+
+<!-- ARARUAMA -->
+<div class="unidade">
+
+<h2>📍 Araruama</h2>
+
+<div class="info">
+Rodovia Amaral Peixoto, 90115 – Loja 02<br>
+Parque Hotel - Araruama/RJ<br><br>
+Em frente à Edumar Auto Peças
+</div>
+
+<div class="info">📞 (22) 99954-9328</div>
+
+<div class="botoes">
+
+<a class="btn whatsapp" href="https://wa.me/5522999549328">WhatsApp</a>
+<a class="btn ligar" href="tel:+5522999549328">Ligar</a>
+<a class="btn maps" href="https://maps.google.com/?q=Araruama+Celinho+Tintas">Mapa</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RODAPÉ -->
+<div class="rodape">
+
+<div>© 2026 Celinho Tintas • Todos os direitos reservados</div>
+
+<div style="margin-top:8px;">
+Desenvolvido por <strong>ffariasdl.dev</strong> • 
+<a href="https://instagram.com/art_ffariasdl" target="_blank">@art_ffariasdl</a>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function tema(){
+document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
